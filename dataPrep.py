@@ -68,23 +68,29 @@ headless_dev.to_csv('dev_coicop.csv', index=False)
 
 with open('coicop_dev.json', 'w') as f:
     sys.stdout = f
+    print('{"data": [')
     for index, row in headless_dev.iterrows():
         data = {}
         data['text'] = row['vorulysing']
         data['label'] = row['coicop2018']
-        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode())
+        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode() +',')
+    print(']}')
 with open('coicop_test.json', 'w') as f:
     sys.stdout = f
+    print('{"data": [')
     for index, row in headless_test.iterrows():
         data = {}
         data['text'] = row['vorulysing']
         data['label'] = row['coicop2018']
-        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode())
+        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode() +',')
+    print(']}')
 with open('coicop_train.json', 'w') as f:
     sys.stdout = f
+    print('{"data": [')
     for index, row in headless_train.iterrows():
         data = {}
         data['text'] = row['vorulysing']
         data['label'] = row['coicop2018']
-        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode())
+        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode() +',')
+    print(']}')
 
