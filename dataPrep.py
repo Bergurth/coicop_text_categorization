@@ -4,6 +4,7 @@ import pandas as pd
 import random
 from math import floor, ceil
 import sys
+import json
 
 df = pd.read_csv("testDataCOICOP.csv", sep=",")
 
@@ -53,10 +54,37 @@ all_dev_dataFrame.to_csv('dev_coicop.csv', index=False)
 # json export tests
 # all_train_dataFrame.to_json('coicop_train.json') ekki malid
 
-json_dev = all_dev_dataFrame.drop(columns=['Heading'])
+headless_dev = all_dev_dataFrame.drop(columns=['Heading'])
+headless_train = all_train_dataFrame.drop(columns=['Heading'])
+headless_test = all_test_dataFrame.drop(columns=['Heading'])
+
+
+headless_train.to_csv('train_coicop.csv', index=False)
+headless_test.to_csv('test_coicop.csv', index=False)
+headless_dev.to_csv('dev_coicop.csv', index=False)
+
 
 # todo fix, check no quotes problem ..
+
 with open('coicop_dev.json', 'w') as f:
     sys.stdout = f
-    for index, row in json_dev.iterrows():
-        print('{"text": "' + row['vorulysing'] + '", "label": "' + row['coicop2018'] + '"}')
+    for index, row in headless_dev.iterrows():
+        data = {}
+        data['text'] = row['vorulysing']
+        data['label'] = row['coicop2018']
+        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode())
+with open('coicop_test.json', 'w') as f:
+    sys.stdout = f
+    for index, row in headless_test.iterrows():
+        data = {}
+        data['text'] = row['vorulysing']
+        data['label'] = row['coicop2018']
+        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode())
+with open('coicop_train.json', 'w') as f:
+    sys.stdout = f
+    for index, row in headless_train.iterrows():
+        data = {}
+        data['text'] = row['vorulysing']
+        data['label'] = row['coicop2018']
+        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode())
+
