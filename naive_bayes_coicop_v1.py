@@ -33,7 +33,7 @@ train_cat_dict = {}
 for cat in categories:
     cat_size = len(rando_cat_dict[cat])
     train_cat_dict[cat] = rando_cat_dict[cat][:floor(cat_size * 0.8)]
-    test_and_dev = rando_cat_dict[cat][:floor(cat_size * - 0.2)]
+    test_and_dev = rando_cat_dict[cat][floor(cat_size * 0.8):]
     test_cat_dict[cat] = test_and_dev[:len(test_and_dev)//2]
     dev_cat_dict[cat] = test_and_dev[len(test_and_dev)//2:]
 
