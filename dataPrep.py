@@ -11,8 +11,12 @@ df = pd.read_csv("testDataCOICOP.csv", sep=",")
 just_coicop = df["coicop2018"]
 
 categories = []
+new_cat_names = {}
+uniq_index = 1
 for cat in just_coicop:
     if cat not in categories:
+        new_cat_names[cat] = uniq_index
+        uniq_index+=1
         categories.append(cat)
 
 # now to make the 90 different dfs, in a dict of dataFrames
@@ -63,6 +67,9 @@ headless_train.to_csv('train_coicop.csv', index=False)
 headless_test.to_csv('test_coicop.csv', index=False)
 headless_dev.to_csv('dev_coicop.csv', index=False)
 
+# preseving the coicop to cat-id mapping
+with open('cat_mapping.json', 'w') as fp:
+    json.dump(new_cat_names, fp)
 
 # todo fix, check no quotes problem ..
 
@@ -72,8 +79,11 @@ with open('coicop_dev.json', 'w') as f:
     for index, row in headless_dev.iterrows():
         data = {}
         data['text'] = row['vorulysing']
-        data['label'] = row['coicop2018']
-        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode() +',')
+        data['label'] = new_cat_names[row['coicop2018']]
+        data['idx'] = new_cat_names[row['coicop2018']] - 1
+        if (index != 0):
+            print(',')
+        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode())
     print(']}')
 with open('coicop_test.json', 'w') as f:
     sys.stdout = f
@@ -81,8 +91,11 @@ with open('coicop_test.json', 'w') as f:
     for index, row in headless_test.iterrows():
         data = {}
         data['text'] = row['vorulysing']
-        data['label'] = row['coicop2018']
-        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode() +',')
+        data['label'] = new_cat_names[row['coicop2018']]
+        data['idx'] = new_cat_names[row['coicop2018']] - 1
+        if (index != 0):
+            print(',')
+        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode())
     print(']}')
 with open('coicop_train.json', 'w') as f:
     sys.stdout = f
@@ -90,7 +103,11 @@ with open('coicop_train.json', 'w') as f:
     for index, row in headless_train.iterrows():
         data = {}
         data['text'] = row['vorulysing']
-        data['label'] = row['coicop2018']
-        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode() +',')
+        data['label'] = new_cat_names[row['coicop2018']]
+        data['idx'] = new_cat_names[row['coicop2018']] - 1
+        if (index != 0):
+            print(',')
+        print(json.dumps(data, ensure_ascii=False).encode('utf8').decode())
     print(']}')
+
 
