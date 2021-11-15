@@ -6,3 +6,4 @@ coicop_train.json
 dev_coicop.csv
 test_coicop.csv
 train_coicop.csv
+cat_mapping.json
