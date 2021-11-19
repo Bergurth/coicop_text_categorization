@@ -1,0 +1,7 @@
+plt.figure(figsize=(8,4), tight_layout=True)
+plt.title("Outlier datasets")
+plt.xlabel('Fjöldi vöruflokka')
+plt.ylabel('Fjöldi vara í hverjum flokki')
+colors = sns.color_palette("muted")
+plt.bar(new_x,plot_y, color=colors[:3], width = 1.5)
+plt.show()
