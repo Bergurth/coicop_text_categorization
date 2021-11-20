@@ -13,7 +13,7 @@ working_dir = os.getcwd()
 print(working_dir)
 
 # path to the dir above model dir containing config.json
-model_path = os.path.join(working_dir, 'XMLR-ENIS-model/XLMR-ENIS-finetuned-coicop-classification-i')
+model_path = os.path.join(working_dir, 'XLMR-ENIS-model/XLMR-ENIS-finetuned-coicop-classification-i')
 
 with open('cat_mapping.json') as json_file:
     cat_mapping_dict = json.load(json_file)

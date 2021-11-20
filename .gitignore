@@ -9,4 +9,4 @@ train_coicop.csv
 cat_mapping.json
 
 # big model
-XMLR-ENIS-model/
+XLMR-ENIS-model/
