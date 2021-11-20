@@ -7,3 +7,6 @@ dev_coicop.csv
 test_coicop.csv
 train_coicop.csv
 cat_mapping.json
+
+# big model
+XMLR-ENIS-model/
