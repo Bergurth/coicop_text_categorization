@@ -11,6 +11,11 @@ cat_mapping.json
 # big models
 XLMR-ENIS-model/
 fastext_model.bin
+fasttext_is_rmh/
+isl_fasttext_rmh_fb-finetuned-coicop.bin
+isl_fasttext_rmh_fb.bin
+isl_fasttext_rmh_fb.vec
+isl_2_fasttext_rmh_fb.vec
 
 # lots of outputs
 geymsla_f_outputs/
