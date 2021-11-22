@@ -7,9 +7,9 @@ from numpy import loadtxt
 import numpy as np 
 
 
-df_train = pd.read_csv("train_coicop_bergur.csv", sep=",")
-df_test = pd.read_csv("test_coicop_bergur.csv", sep=",")
-df_valid = pd.read_csv("dev_coicop_bergur.csv", sep=",")
+df_train = pd.read_csv("train_coicop.csv", sep=",")
+df_test = pd.read_csv("test_coicop.csv", sep=",")
+df_valid = pd.read_csv("dev_coicop.csv", sep=",")
 
 
 #df_train = df_train.drop["Heading"]
@@ -67,9 +67,9 @@ for key,value in df_valid.values:
 
 
 #TODO: autotuneValidationFile tekur 5 min að keyra, taktu hana út og skiptu fyrir epoch = 30
-model = fasttext.train_supervised(input="geymsla_f_outputs/training_dataset_valid.txt", autotuneValidationFile="geymsla_f_outputs/validation_data.txt")
+model = fasttext.train_supervised(input="geymsla_f_outputs/training_dataset_valid.txt", autotuneValidationFile="geymsla_f_outputs/testing_data_valid.txt")
 
-print(model.test("geymsla_f_outputs/testing_data_valid.txt"))
+print(model.test("geymsla_f_outputs/validation_data.txt"))
 
 output_data = df_test
 counter = 0 
@@ -93,6 +93,7 @@ for key,value in output_data.values:
     create_text_file.write("\n")
 
 
+model.save_model("fastext_model.bin")
 
 
 

@@ -8,5 +8,9 @@ test_coicop.csv
 train_coicop.csv
 cat_mapping.json
 
-# big model
+# big models
 XLMR-ENIS-model/
+fastext_model.bin
+
+# lots of outputs
+geymsla_f_outputs/
