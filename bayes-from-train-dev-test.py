@@ -51,9 +51,6 @@ vectorizer = CountVectorizer()
 
 model = MultinomialNB()
 
-# print("printing less_text_x")
-# print(less_test_x) # --> less_text_x is for_pred
-
 less_x_counts = vectorizer.fit_transform(less_train_x)
 less_x_test_counts = vectorizer.transform(less_test_x)
 
@@ -62,18 +59,19 @@ model.fit(less_x_counts, less_train_y)
 predict_train = model.predict(less_x_counts)
 print('Target on train data', predict_train)
 
-# print("printing predict_train")
-# print(predict_train)
-
-
 accuracy_train = accuracy_score(less_train_y, predict_train)
 print('accuracy_score on traindataset :', accuracy_train)
 
 predict_test = model.predict(less_x_test_counts)
 print('Target on test data', predict_test)
 
-from sklearn.metrics import classification_report
-print(classification_report(less_test_y, predict_test))
+
+# un-comment following for an extensive classification report
+# with percision, recall and f1 per class and averaged
+# -------------------------------------------------------------
+# from sklearn.metrics import classification_report
+# print(classification_report(less_test_y, predict_test))
+# -------------------------------------------------------------
 
 accuracy_test = accuracy_score(less_test_y, predict_test)
 print('accuracy_score on test dataset : ', accuracy_test)
