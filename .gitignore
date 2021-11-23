@@ -16,6 +16,13 @@ isl_fasttext_rmh_fb-finetuned-coicop.bin
 isl_fasttext_rmh_fb.bin
 isl_fasttext_rmh_fb.vec
 isl_2_fasttext_rmh_fb.vec
+fast_text_is_skipgram_dim300.bin
+isl_fast_text_skipgram_dim300.vec
+isl_fast_text_skipgram_dim300_vec-finetuned-coicop.bin
+isl_fasttext100_rmh_fb-finetuned-coicop.bin
+isl_fasttext2_rmh_fb-finetuned-coicop.bin
+
+
 
 # lots of outputs
 geymsla_f_outputs/

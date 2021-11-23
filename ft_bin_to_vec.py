@@ -1,13 +1,14 @@
 from fasttext import load_model
 
 # original BIN model loading
-f = load_model("isl_fasttext_rmh_fb.bin")
+# f = load_model("isl_fasttext_rmh_fb.bin")
+f = load_model("fast_text_is_skipgram_dim300.bin")
 lines=[]
 
 # get all words from model
 words = f.get_words()
 
-with open('isl_2_fasttext_rmh_fb.vec','w') as file_out:
+with open('isl_fast_text_skipgram_dim300.vec','w') as file_out:
     
     # the first line must contain number of total words and vector dimension
     file_out.write(str(len(words)) + " " + str(f.get_dimension()) + "\n")

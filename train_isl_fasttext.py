@@ -40,10 +40,10 @@ for key,value in df_valid.values:
 #TODO: autotuneValidationFile tekur 5 min að keyra, taktu hana út og skiptu fyrir epoch = 30
 model = fasttext.train_supervised(
     input="geymsla_f_outputs/training_dataset_valid.txt",
-    # autotuneValidationFile="geymsla_f_outputs/testing_data_valid.txt",
+    autotuneValidationFile="geymsla_f_outputs/testing_data_valid.txt",
     # pretrainedVectors="isl_fasttext_rmh_fb.vec"
-    pretrainedVectors="isl_2_fasttext_rmh_fb.vec",
-    epoch=30
+    pretrainedVectors="isl_fast_text_skipgram_dim300.vec",
+    dim=300
 )
 
 print(model.test("geymsla_f_outputs/validation_data.txt"))
@@ -70,7 +70,7 @@ for key,value in output_data.values:
     create_text_file.write("\n")
 
 
-model.save_model("isl_fasttext_rmh_fb-finetuned-coicop.bin")
+model.save_model("isl_fast_text_skipgram_dim300_vec-finetuned-autotuned-coicop.bin")
 
 
 

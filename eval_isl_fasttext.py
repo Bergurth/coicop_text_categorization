@@ -4,7 +4,7 @@ import fasttext
 import json
 import pandas as pd
 
-model = fasttext.load_model("isl_fasttext_rmh_fb-finetuned-coicop.bin")
+model = fasttext.load_model("isl_fasttext100_rmh_fb-finetuned-coicop.bin")
 
 value = "start"
 
