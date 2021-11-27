@@ -49,3 +49,12 @@ weighted avg       0.77      0.77      0.74      2059
 ```the naive-bayes scripts: bayes-from-train-dev-test.py. naive_bayes_coicop_v1.py and naive_bayes_with_lemmas_coicop_v2.py```all involve training but also include use of the models
 
 
+### Evaluation scripts
+
+
+### Use Scripts
+use_enis.py\
+use_fasttext.py\
+use_isl_fasttext.py\
+bayes-from-train-dev-text.py\
+naive_bayes_with_lemmas_coicop_v2.py
