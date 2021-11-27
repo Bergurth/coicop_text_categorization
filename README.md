@@ -43,9 +43,9 @@ weighted avg       0.77      0.77      0.74      2059
 
 ### Training scripts
 
-```trainBERT-like-coicop.py```is an example script showing the neccesary steps we used in training on XLMR-ENIS and IceBERT models
-```fast_text_classifier_valid_data.py```is the script we used to train on fasttext model.
-```train_isl_fasttext.py```the script to train on an icelandic version of fastext
+```trainBERT-like-coicop.py```is an example script showing the neccesary steps we used in training on XLMR-ENIS and IceBERT models\
+```fast_text_classifier_valid_data.py```is the script we used to train on fasttext model.\
+```train_isl_fasttext.py```the script to train on an icelandic version of fastext\
 ```the naive-bayes scripts: bayes-from-train-dev-test.py. naive_bayes_coicop_v1.py and naive_bayes_with_lemmas_coicop_v2.py```all involve training but also include use of the models
 
 
