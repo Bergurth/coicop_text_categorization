@@ -50,7 +50,10 @@ weighted avg       0.77      0.77      0.74      2059
 
 
 ### Evaluation scripts
-
+evalBERT-like-coicop.py\
+eval_fasttext.py\
+eval_isl_fasttext.py\
+bayes-from-train-dev-test.py ---> with evaluation portion of code uncommented
 
 ### Use Scripts
 use_enis.py\
