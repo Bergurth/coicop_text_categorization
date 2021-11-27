@@ -41,6 +41,11 @@ weighted avg       0.77      0.77      0.74      2059
 
 ## General description of the content of this repository
 
+### A note on data and models
+The models themselves as well as the training data are not a part of this repository currently.\
+the example script trainBERT-like-coicop.py details the form of the data needed for training the
+BERT-like models.
+
 ### Training scripts
 
 ```trainBERT-like-coicop.py``` is an example script showing the neccesary steps we used in training on XLMR-ENIS and IceBERT models\
