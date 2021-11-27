@@ -7,6 +7,7 @@ dev_coicop.csv
 test_coicop.csv
 train_coicop.csv
 cat_mapping.json
+unorganized_folder/dataframe_dataset.txt
 
 # big models
 XLMR-ENIS-model/
