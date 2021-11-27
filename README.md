@@ -4,8 +4,8 @@
 
 This is the code repository related to a project that revolved around classifying product descriptions into COICOP2018 categories. Various kinds of automatic classifiers where developed and tested through the course of the project.
 
-the abreiviated results where as follows.
-
+the abreiviated results where as follows:
+```
 --------------------------------------------------------------------------------
                percision    recall    f1-score  support
 XLMR-enis-26
@@ -37,7 +37,7 @@ naive-bayes
     accuracy                           0.77      2059
    macro avg       0.61      0.41      0.46      2059
 weighted avg       0.77      0.77      0.74      2059
-
+```
 
 ## General description of the content of this repository
 
