@@ -22,7 +22,7 @@ isl_fast_text_skipgram_dim300.vec
 isl_fast_text_skipgram_dim300_vec-finetuned-coicop.bin
 isl_fasttext100_rmh_fb-finetuned-coicop.bin
 isl_fasttext2_rmh_fb-finetuned-coicop.bin
-
+my_dumped_naive_bayes_classifier.joblib.pkl
 
 
 # lots of outputs

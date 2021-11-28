@@ -4,6 +4,8 @@ import pandas as pd
 import random
 from math import floor, ceil
 
+
+
 df = pd.read_csv("testDataCOICOP.csv", sep=",")
 
 just_coicop = df["coicop2018"]
@@ -82,6 +84,19 @@ print('accuracy_score on test dataset : ', accuracy_test)
 # milk = vectorizer.transform(['Mjólk'])
 # milk.toarray()[0]
 # model.predict(milk)
+"""
+
+# uncomment if you wish to save the classifier
+"""
+import joblib
+from sklearn.datasets import load_digits
+
+digits = load_digits()
+filename = 'my_dumped_naive_bayes_classifier.joblib.pkl'
+_ = joblib.dump(model, filename, compress=9)
+
+# 4 loading classifier
+# classifier_model = joblib.load(filename)
 """
 
 value = "start"
