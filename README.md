@@ -44,7 +44,8 @@ weighted avg       0.77      0.77      0.74      2059
 ### A note on data and models
 The models themselves as well as the training data are not a part of this repository currently.\
 the example script trainBERT-like-coicop.py details the form of the data needed for training the
-BERT-like models.
+BERT-like models. Examples showing the structure of the various forms of data files used can be seen
+in the directory dummy_data
 
 ### Training scripts
 
